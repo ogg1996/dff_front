@@ -33,7 +33,7 @@ const TimelineItem = ({ item }) => {
     } else {
       setCardText('카드');
     }
-  }, []);
+  }, [item]);
 
   return (
     <div className="flex items-center py-[8px] border-b-[1px] border-[#dee2e6] last:border-b-0 justify-between">
