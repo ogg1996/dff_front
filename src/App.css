@@ -1,1 +1,40 @@
 @import 'tailwindcss';
+
+html,
+body {
+  margin: 0px;
+  min-height: 100vh;
+  width: 100%;
+  height: 100%;
+  background-color: #121214;
+  color: #dee2e6;
+}
+
+body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#root {
+  max-width: 600px;
+  min-height: 100vh;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px 10px 20px 10px;
+}
+
+.primeval {
+  background: linear-gradient(180deg, #57e95b, #3a8390);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.epic {
+  color: rgb(239, 169, 0);
+}
+
+.legendary {
+  color: rgb(239, 112, 0);
+}
