@@ -9,6 +9,7 @@ import UserInfo from './pages/UserInfo';
 import AccessDenied from './components/AccessDenied';
 import HeaderNav from './components/HeaderNav';
 import Footer from './components/Footer';
+import TopButton from './components/TopButton';
 
 function App() {
   const [activeNav, setActiveNav] = useState();
@@ -35,6 +36,7 @@ function App() {
         </Routes>
       </div>
       <Footer />
+      <TopButton />
     </div>
   );
 }
