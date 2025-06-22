@@ -6,7 +6,8 @@ import timelineApi from '../api/timelineApi';
 
 import LoadingSpinner from '../components/LoadingSpinner';
 import LinkButtons from '../components/LinkButtons';
-import CountItem from '../components/CountItem';
+import TodayCountItem from '../components/TodayCountItem';
+import WeekCountItem from '../components/WeekCountItem';
 import Timeline from '../components/Timeline';
 
 const UserInfo = ({ setActiveNav }) => {
@@ -30,7 +31,8 @@ const UserInfo = ({ setActiveNav }) => {
       {!isLoading ? (
         <>
           <LinkButtons username={username} />
-          <CountItem timeline={data} />
+          <TodayCountItem timeline={data} />
+          <WeekCountItem timeline={data} />
           <Timeline timeline={data} />
         </>
       ) : (

@@ -1,12 +1,26 @@
 import { useEffect, useState } from 'react';
 
-const CountItem = ({ timeline }) => {
+const TodayCountItem = ({ timeline }) => {
   const [primevalCount, setPrimevalCount] = useState(0);
   const [epicCount, setEpicCount] = useState(0);
   const [legendaryCount, setLegendaryCount] = useState(0);
 
   useEffect(() => {
-    const counts = timeline.reduce(
+    const now = new Date();
+    const yDay = new Date(now.setDate(now.getDate() - 1));
+    const yYear = yDay.getFullYear();
+    const yMonth = (yDay.getMonth() + 1).toString().padStart(2, '0');
+    const yDate = yDay.getDate().toString().padStart(2, '0');
+    const formatedYDate = `${yYear}-${yMonth}-${yDate}`;
+
+    const filteredTimeline = [];
+
+    for (const item of timeline) {
+      if (formatedYDate === item.date.slice(0, 10)) break;
+      filteredTimeline.push(item);
+    }
+
+    const counts = filteredTimeline.reduce(
       (acc, { data: { itemRarity } }) => {
         if (acc[itemRarity] !== undefined) {
           acc[itemRarity]++;
@@ -24,7 +38,7 @@ const CountItem = ({ timeline }) => {
   return (
     <div className="bg-[#ffffff0d] p-[20px] rounded-[12px]">
       <div className="text-[20px] pb-[12px] font-bold">
-        이번주 획득한 레어리티 갯수
+        오늘 획득한 장비 개수
       </div>
       <div className="flex flex-col pl-[12px]">
         <div className="flex gap-[10px] font-bold primeval">
@@ -44,4 +58,4 @@ const CountItem = ({ timeline }) => {
   );
 };
 
-export default CountItem;
+export default TodayCountItem;
