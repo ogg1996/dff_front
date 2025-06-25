@@ -16,7 +16,8 @@ const UserInfo = ({ setActiveNav }) => {
 
   const { data, isLoading } = useQuery({
     queryKey: ['timeLine', username],
-    queryFn: () => timelineApi(username)
+    queryFn: () => timelineApi(username),
+    refetchInterval: 1000 * 60 * 5
   });
 
   useEffect(() => {
