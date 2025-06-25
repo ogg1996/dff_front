@@ -9,7 +9,7 @@ const TopButton = () => {
   };
   return (
     <button
-      className="fixed bottom-[45px] right-[15px]"
+      className="fixed bottom-[45px] right-[15px] cursor-pointer"
       onClick={onClickEventHandler}
     >
       <img className="w-[36px]" src={topButtonIcon} />
