@@ -7,17 +7,38 @@ const TodayCountItem = ({ timeline }) => {
 
   useEffect(() => {
     const now = new Date();
-    const yDay = new Date(now.setDate(now.getDate() - 1));
-    const yYear = yDay.getFullYear();
-    const yMonth = (yDay.getMonth() + 1).toString().padStart(2, '0');
-    const yDate = yDay.getDate().toString().padStart(2, '0');
-    const formatedYDate = `${yYear}-${yMonth}-${yDate}`;
+
+    if (0 <= now.getHours() && now.getHours() < 6) {
+      now.setDate(now.getDate() - 1);
+    }
+
+    const minDate = new Date(
+      now.getFullYear(),
+      now.getMonth(),
+      now.getDate(),
+      6,
+      0,
+      0
+    );
+    const maxDate = new Date(minDate);
+    maxDate.setDate(maxDate.getDate() + 1);
 
     const filteredTimeline = [];
 
     for (const item of timeline) {
-      if (formatedYDate === item.date.slice(0, 10)) break;
-      filteredTimeline.push(item);
+      const time = item.date;
+      const timeStamp = new Date(
+        `${time.slice(0, 10)}T${time.slice(11, 16)}:00`
+      ).getTime();
+
+      if (
+        minDate.getTime() <= timeStamp &&
+        timeStamp < maxDate.getTime()
+      ) {
+        filteredTimeline.push(item);
+      } else {
+        break;
+      }
     }
 
     const counts = filteredTimeline.reduce(
