@@ -15,7 +15,11 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <img className="w-[280px] h-[280px]" src={ddfLogo} />
+      <img
+        src={ddfLogo}
+        loading="lazy"
+        className="w-[280px] h-[280px]"
+      />
       <div className="w-[260px] flex flex-col gap-[8px]">
         <p className="text-start">Neople OpenAPI를 활용한</p>
         <p className="text-end text-[20px] font-bold">
