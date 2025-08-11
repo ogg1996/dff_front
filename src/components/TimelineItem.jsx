@@ -4,6 +4,8 @@ const TimelineItem = ({ item }) => {
   const [textColor, setTextColor] = useState('');
   const [cardText, setCardText] = useState('');
 
+  console.log(item);
+
   useEffect(() => {
     if (item.data.itemRarity === '레전더리') {
       setTextColor('legendary');
@@ -22,6 +24,9 @@ const TimelineItem = ({ item }) => {
           setCardText('심연');
           break;
         case '워터파크 던전':
+          setCardText('이벤트');
+          break;
+        case '소생자의 방':
           setCardText('이벤트');
           break;
         default:
