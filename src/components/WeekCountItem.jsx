@@ -7,10 +7,11 @@ const WeekCountItem = ({ timeline }) => {
 
   useEffect(() => {
     const noJarFilteredTimeline = timeline.filter(
-      timeline =>
-        timeline.code !== 504 ||
-        timeline.data.itemName.slice(0, 2) !== '고유'
+      item =>
+        item.code !== 504 || item.data.itemName.slice(0, 2) === '고유'
     );
+
+    console.log(noJarFilteredTimeline);
 
     const counts = noJarFilteredTimeline.reduce(
       (acc, { data: { itemRarity } }) => {

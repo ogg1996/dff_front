@@ -12,8 +12,6 @@ const TodayCountItem = ({ timeline }) => {
       now.setDate(now.getDate() - 1);
     }
 
-    console.log(timeline);
-
     const minDate = new Date(
       now.getFullYear(),
       now.getMonth(),
