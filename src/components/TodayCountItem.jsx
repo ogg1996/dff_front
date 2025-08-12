@@ -12,6 +12,8 @@ const TodayCountItem = ({ timeline }) => {
       now.setDate(now.getDate() - 1);
     }
 
+    console.log(timeline);
+
     const minDate = new Date(
       now.getFullYear(),
       now.getMonth(),
@@ -23,7 +25,7 @@ const TodayCountItem = ({ timeline }) => {
     const maxDate = new Date(minDate);
     maxDate.setDate(maxDate.getDate() + 1);
 
-    const filteredTimeline = [];
+    const todayFilteredTimeline = [];
 
     for (const item of timeline) {
       const time = item.date;
@@ -35,13 +37,19 @@ const TodayCountItem = ({ timeline }) => {
         minDate.getTime() <= timeStamp &&
         timeStamp < maxDate.getTime()
       ) {
-        filteredTimeline.push(item);
+        todayFilteredTimeline.push(item);
       } else {
         break;
       }
     }
 
-    const counts = filteredTimeline.reduce(
+    const noJarFilteredTimeline = todayFilteredTimeline.filter(
+      timeline =>
+        timeline.code !== 504 &&
+        timeline.data.itemName.slice(0, 2) !== '고유'
+    );
+
+    const counts = noJarFilteredTimeline.reduce(
       (acc, { data: { itemRarity } }) => {
         if (acc[itemRarity] !== undefined) {
           acc[itemRarity]++;

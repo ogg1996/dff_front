@@ -6,7 +6,13 @@ const WeekCountItem = ({ timeline }) => {
   const [legendaryCount, setLegendaryCount] = useState(0);
 
   useEffect(() => {
-    const counts = timeline.reduce(
+    const noJarFilteredTimeline = timeline.filter(
+      timeline =>
+        timeline.code !== 504 ||
+        timeline.data.itemName.slice(0, 2) !== '고유'
+    );
+
+    const counts = noJarFilteredTimeline.reduce(
       (acc, { data: { itemRarity } }) => {
         if (acc[itemRarity] !== undefined) {
           acc[itemRarity]++;

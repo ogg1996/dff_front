@@ -4,8 +4,6 @@ const TimelineItem = ({ item }) => {
   const [textColor, setTextColor] = useState('');
   const [cardText, setCardText] = useState('');
 
-  console.log(item);
-
   useEffect(() => {
     if (item.data.itemRarity === '레전더리') {
       setTextColor('legendary');
