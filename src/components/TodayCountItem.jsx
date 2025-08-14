@@ -44,7 +44,7 @@ const TodayCountItem = ({ timeline }) => {
     const noJarFilteredTimeline = todayFilteredTimeline.filter(
       timeline =>
         timeline.code !== 504 &&
-        timeline.data.itemName.slice(0, 2) !== '고유'
+        timeline.data.itemName.slice(0, 2) === '고유'
     );
 
     const counts = noJarFilteredTimeline.reduce(
