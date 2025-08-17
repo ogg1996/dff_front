@@ -11,8 +11,6 @@ const WeekCountItem = ({ timeline }) => {
         item.code !== 504 || item.data.itemName.slice(0, 2) === '고유'
     );
 
-    console.log(noJarFilteredTimeline);
-
     const counts = noJarFilteredTimeline.reduce(
       (acc, { data: { itemRarity } }) => {
         if (acc[itemRarity] !== undefined) {
