@@ -21,6 +21,9 @@ const TimelineItem = ({ item }) => {
         case '심연 : 종말의 숭배자':
           setCardText('심연');
           break;
+        case '종말의 경계':
+          setCardText('경계');
+          break;
         case '워터파크 던전':
           setCardText('이벤트');
           break;
