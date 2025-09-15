@@ -29,12 +29,12 @@ const UserInfo = ({ setActiveNav }) => {
       className="min-h-[500px] mx-[2px] p-[20px] bg-[#212529] rounded-[0_0_12px_12px] 
                 flex flex-col gap-[20px]"
     >
+      <LinkButtons username={username} />
       {!isLoading ? (
         <>
-          <LinkButtons username={username} />
-          <TodayCountItem timeline={data} />
-          <WeekCountItem timeline={data} />
-          <Timeline timeline={data} />
+          <TodayCountItem isLoading={isLoading} timeline={data} />
+          <WeekCountItem isLoading={isLoading} timeline={data} />
+          <Timeline isLoading={isLoading} timeline={data} />
         </>
       ) : (
         <LoadingSpinner />
