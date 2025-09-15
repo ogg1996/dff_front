@@ -10,11 +10,6 @@ const userList = [
     adventureName: 'kko'
   },
   {
-    ko_name: '만석',
-    en_name: 'manseok',
-    adventureName: 'pj피자신월점'
-  },
-  {
     ko_name: '시우',
     en_name: 'siwoo',
     adventureName: '강서로47길83'

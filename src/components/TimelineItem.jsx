@@ -24,12 +24,6 @@ const TimelineItem = ({ item }) => {
         case '종말의 경계':
           setCardText('경계');
           break;
-        case '워터파크 던전':
-          setCardText('이벤트');
-          break;
-        case '소생자의 방':
-          setCardText('이벤트');
-          break;
         default:
           setCardText('무빼노');
           break;

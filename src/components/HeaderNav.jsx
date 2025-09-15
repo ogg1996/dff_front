@@ -8,7 +8,7 @@ const HeaderNav = ({ activeNav }) => {
       {userList.map((user, _index) => (
         <Link
           key={`user_${_index}`}
-          className={`w-[20%] h-[60px] flex justify-center items-center
+          className={`w-[25%] h-[60px] flex justify-center items-center
            rounded-[12px_12px_0_0] border-[2px] border-[#121214] ${
              activeNav === user.en_name
                ? 'bg-[#212529] border-b-0'
