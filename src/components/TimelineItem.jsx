@@ -24,14 +24,35 @@ const TimelineItem = ({ item }) => {
         case '종말의 경계':
           setCardText('경계');
           break;
+        case '잊혀진 연구소 던전':
+          setCardText('이벤트');
+          break;
         default:
           setCardText('무빼노');
+          break;
+      }
+    } else if (item.name === '아이템 획득(던전 카드 보상)') {
+      switch (item.data.dungeonName) {
+        case '찬사의 광장':
+          setCardText('베누스');
+          break;
+        case '애쥬어 메인':
+          setCardText('애쥬어');
+          break;
+        case '침묵의 성소':
+          setCardText('여신전');
+          break;
+        case '해방된 흉몽':
+          setCardText('흉몽');
+          break;
+        default:
+          setCardText('환요');
           break;
       }
     } else if (item.name === '아이템 획득(항아리&상자)') {
       setCardText('항아리');
     } else {
-      setCardText('카드');
+      setCardText('레이드');
     }
   }, [item]);
 
