@@ -31,7 +31,7 @@
 
 |실행화면|
 |---|
-|![]()|
+|![](https://github.com/ogg1996/readmeResource/blob/main/dff/%EC%8B%A4%ED%96%89%ED%99%94%EB%A9%B4.gif)|
 
 ## 🚀 시작하기
 
