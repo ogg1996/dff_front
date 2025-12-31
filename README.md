@@ -15,7 +15,7 @@
 ![React](https://img.shields.io/badge/React-18-blue?logo=react)
 ![React Query](https://img.shields.io/badge/React%20Query-%23FF4154?logo=reactquery&logoColor=white)
 ![React Router](https://img.shields.io/badge/React%20Router-%23CA4245?logo=reactrouter&logoColor=white)
-![tailwindcss](https://img.shields.io/badge/Styled--Components-%23DB7093?logo=styled-components&logoColor=white)
+![tailwindcss](https://img.shields.io/badge/Styled--Components-%23007EC6?logo=tailwind-css&logoColor=white)
 ![Axios](https://img.shields.io/badge/Axios-%23007EC6?logo=axios&logoColor=white)
 
 ### 🏗 **Build & Development**
