@@ -6,7 +6,7 @@
 <br>
 
 ## 🔗 배포 링크
-> https://dffriends.netlify.app
+> https://dffriends.netlify.app (배포 중지)
 
 <br>
 
